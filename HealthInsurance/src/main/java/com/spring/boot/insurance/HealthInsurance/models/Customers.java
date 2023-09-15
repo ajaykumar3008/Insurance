@@ -1,6 +1,7 @@
 package com.spring.boot.insurance.HealthInsurance.models;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class Customers {
 	int cust_id;
@@ -16,7 +17,7 @@ public class Customers {
 	int cust_luuser;
 
 	public Customers() {
-		super();
+
 	}
 
 	public int getCust_id() {
@@ -75,8 +76,16 @@ public class Customers {
 		this.cust_lastname = cust_lastname;
 	}
 
-	public void setCust_dob(Date cust_dob) {
-		this.cust_dob = cust_dob;
+	public void setCust_dob(String cust_dob) {
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			java.util.Date utilDate = dateFormat.parse(cust_dob);
+			this.cust_dob = new Date(utilDate.getTime());
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
 	}
 
 	public void setCust_address(String cust_address) {
@@ -87,8 +96,16 @@ public class Customers {
 		this.cust_gender = cust_gender;
 	}
 
-	public void setCust_cdate(Date cust_cdate) {
-		this.cust_cdate = cust_cdate;
+	public void setCust_cdate(String cust_cdate) {
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			java.util.Date utilDate = dateFormat.parse(cust_cdate);
+			this.cust_cdate = new Date(utilDate.getTime());
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
 	}
 
 	public void setCust_aadhar(String cust_aadhar) {

@@ -22,4 +22,12 @@ public class InsuranceService {
 
 		return impInsurance.getAllCustomers();
 	}
+
+	public void addNewCustomer(Customers cust) {
+		impInsurance.addCustomer(cust);
+	}
+
+	public void updateCustomer(Customers cust) {
+		impInsurance.updateCustomer(cust);
+	}
 }

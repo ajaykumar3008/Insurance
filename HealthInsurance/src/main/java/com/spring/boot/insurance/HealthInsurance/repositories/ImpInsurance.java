@@ -30,4 +30,28 @@ public class ImpInsurance implements InsuranceContractor {
 
 	}
 
+	@Override
+	public void addCustomer(Customers cust) {
+
+		String query = "insert into ins_customers values(?,?,?,?,?,?,?,?,?,?,?)";
+		Object[] params = { cust.getCust_id(), cust.getCust_firstname(), cust.getCust_lastname(), cust.getCust_dob(),
+				cust.getCust_address(), cust.getCust_gender(), cust.getCust_cdate(), cust.getCust_aadhar(),
+				cust.getCust_status(), cust.getCust_ludate(), cust.getCust_luuser() };
+
+		jdbc.update(query, params);
+
+	}
+
+	@Override
+	public void updateCustomer(Customers cust) {
+
+		String query = "update ins_customers set cust_fname=?,cust_lname=?,cust_dob=?,cust_address=?,cust_gender=?,cust_cdate=?,cust_aadhar=?,cust_status=?,cust_luudate=?,cust_luuser=? where cust_id=?";
+		Object[] params = { cust.getCust_firstname(), cust.getCust_lastname(), cust.getCust_dob(),
+				cust.getCust_address(), cust.getCust_gender(), cust.getCust_cdate(), cust.getCust_aadhar(),
+				cust.getCust_status(), cust.getCust_ludate(), cust.getCust_luuser(), cust.getCust_id() };
+
+		jdbc.update(query, params);
+
+	}
+
 }
