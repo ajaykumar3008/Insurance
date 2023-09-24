@@ -249,27 +249,16 @@ function removeSelectedSkill() {
 </head>
 <body>
     <div class="menu">
-		<div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4">
-    <h5 class="text-white h4">Collapsed content</h5>
-    <span class="text-muted">Toggleable via the navbar brand.</span>
-  </div>
-</div>
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav>
+		
         <ul>
-            
-            <li><a th:href="@{'/dash'}">Claims</a></li><br>
-            <li><a th:href="@{'/dash'}">Payments</a></li><br>
-            <li><a th:href="@{'/claims'}">Insurances</a></li><br>
+            <li><a th:href="@{'/claimdash'}">Summary</a></li><br>
+            <li><a th:href="@{'/dash'}">New Claim</a></li><br>
+            <li><a th:href="@{'/applicants'}">Claims List</a></li><br>
+            <li><a th:href="@{'/'}">Payments</a></li><br>
+            <li><a th:href="@{'/start'}">Insurances</a></li><br>
             <li><a th:href="@{'/'}">Contact</a></li><br>
-            <li><a th:href="@{'/dash'}">Security</a></li><br>
-            <li><a th:href="@{'/dash'}">Logout</a></li><br>
+            <li><a th:href="@{'/'}">Security</a></li><br>
+            <li><a th:href="@{'/'}">Logout</a></li><br>
 
         </ul>
     </div>
